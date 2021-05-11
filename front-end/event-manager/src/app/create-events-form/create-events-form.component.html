@@ -4,16 +4,17 @@
 
   <form class="form" fxLayoutAlign="stretch" fxLayout="column" [formGroup]="eventForm" (ngSubmit)="onSubmit()">
     <mat-toolbar color="primary">Event Information</mat-toolbar>
-    <mat-form-field formGroupName="events">
-      <input matInput placeholder="Events Title" formControlName="title">
+    <mat-form-field formGroupName="events" >
+      <input matInput placeholder="Title" formControlName="title" required >
+      <mat-error>lol</mat-error>
     </mat-form-field>
 
     <mat-form-field formGroupName="events">
-      <input matInput placeholder="Events Subtitle" formControlName="subtitle">
+      <input matInput placeholder="Subtitle" formControlName="subtitle" required>
     </mat-form-field>
 
     <mat-form-field formGroupName="events">
-      <input matInput placeholder="Date"[matDatepicker]="picker" formControlName='date'>
+      <input matInput placeholder="Date"[matDatepicker]="picker" formControlName='date' required>
       <mat-datepicker-toggle matSuffix [for]="picker">
           <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
       </mat-datepicker-toggle>
@@ -21,57 +22,57 @@
     </mat-form-field>
 
     <mat-form-field formGroupName="events">
-      <input matInput placeholder="Event Start Time" formControlName="startTime">
+      <input matInput placeholder="Start Time" formControlName="startTime" required>
 
     </mat-form-field>
 
     <mat-form-field formGroupName="events">
-      <input matInput placeholder="Event End Time" formControlName="endTime">
+      <input matInput placeholder="End Time" formControlName="endTime" required>
     </mat-form-field>
 
     <mat-form-field formGroupName="events">
-      <input matInput placeholder="Event capacity" formControlName="capacity">
+      <input matInput placeholder="Capacity" formControlName="capacity" required>
     </mat-form-field>
     <mat-toolbar color="primary">Venue Information</mat-toolbar>
     <mat-form-field formGroupName="venue">
-      <input matInput placeholder="Venue Name" formControlName="name">
+      <input matInput placeholder="Name" formControlName="name" required>
     </mat-form-field>
 
     <mat-form-field formGroupName="venue">
-      <input matInput placeholder="Venue Street Address" formControlName="streetAddress">
+      <input matInput placeholder="Street Address" formControlName="streetAddress" required>
     </mat-form-field>
 
     <mat-form-field formGroupName="venue">
-      <input matInput placeholder="City" formControlName="city">
+      <input matInput placeholder="City" formControlName="city" required>
     </mat-form-field>
 
     <mat-form-field formGroupName="venue">
-      <input matInput placeholder="Province" formControlName="province">
+      <input matInput placeholder="Province" formControlName="province" required>
     </mat-form-field>
 
     <mat-form-field formGroupName="venue">
-      <input matInput placeholder="Country" formControlName="country">
+      <input matInput placeholder="Country" formControlName="country" required>
     </mat-form-field>
 
     <mat-form-field formGroupName="venue">
-      <input matInput placeholder="ZipCode" formControlName="zipCode">
+      <input matInput placeholder="ZipCode" formControlName="zipCode" required>
     </mat-form-field>
     <mat-toolbar color="primary">Ticket Information</mat-toolbar>
 
     <mat-form-field formGroupName="tickets">
-      <input matInput placeholder="General Tickets Available" formControlName="generalAvail">
+      <input matInput placeholder="General Tickets Available" formControlName="generalAvail" required>
     </mat-form-field>
 
     <mat-form-field formGroupName="tickets">
-      <input matInput placeholder="General Tickets Price" formControlName="generalPrice">
+      <input matInput placeholder="General Tickets Price" formControlName="generalPrice" required>
     </mat-form-field>
 
     <mat-form-field formGroupName="tickets">
-      <input matInput placeholder="VIP Tickets Available" formControlName="vipAvail">
+      <input matInput placeholder="VIP Tickets Available" formControlName="vipAvail" required>
     </mat-form-field>
 
     <mat-form-field formGroupName="tickets">
-      <input matInput placeholder="VIP Tickets Price" formControlName="vipPrice">
+      <input matInput placeholder="VIP Tickets Price" formControlName="vipPrice" required>
     </mat-form-field>
     <button mat-raised-button type="submit" class="btn" color="primary">Save</button>
   </form>
