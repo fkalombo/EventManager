@@ -14,8 +14,11 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+<<<<<<< HEAD
 import { CreateEventsComponent } from './create-events/create-events.component';
 import { LoginComponent } from './login/login.component';
+=======
+>>>>>>> a08cd5304ffd67f238276ed942b61afbb71c6b82
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -25,24 +28,24 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { RootNavComponent } from './root-nav/root-nav.component';
 import {MatListModule} from '@angular/material/list';
+import { CreateEventsFormComponent } from './create-events-form/create-events-form.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreateEventsComponent,
-    LoginComponent,
     RegisterFormComponent,
     HomeComponent,
     FooterComponent,
-    RootNavComponent
+    RootNavComponent,
+    CreateEventsFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-  
+
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
