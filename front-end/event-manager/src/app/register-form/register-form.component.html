@@ -1,0 +1,40 @@
+<div fxLayoutAlign="center center" fxFlexFill class="main-div">
+<mat-card fxFlex="44"> 
+    <mat-toolbar color="primary">Registration</mat-toolbar>
+    <form class="form" fxLayoutAlign="stretch" fxLayout="column" [formGroup]=formGroup>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="First Name" formControlName='firstName'>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Last Name" formControlName='lastName'>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Date of Birth"[matDatepicker]="picker" formControlName='dateOfBirth'>
+            <mat-datepicker-toggle matSuffix [for]="picker">
+                <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" >
+            <input matInput placeholder="Gender" formControlName='gender'>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Telephone Number" formControlName='telephone'>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Email" formControlName='email'>
+        </mat-form-field>
+        
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Password" formControlName='password'>
+        </mat-form-field>
+        <button mat-raised-button type="submit" class="btn" color="primary">Register</button>
+        </form>    
+</mat-card>
+</div>
+
