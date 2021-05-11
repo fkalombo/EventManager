@@ -24,6 +24,7 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { RootNavComponent } from './root-nav/root-nav.component';
 import {MatListModule} from '@angular/material/list';
+import { CreateEventsFormComponent } from './create-events-form/create-events-form.component';
 
 
 
@@ -34,7 +35,8 @@ import {MatListModule} from '@angular/material/list';
     RegisterFormComponent,
     HomeComponent,
     FooterComponent,
-    RootNavComponent
+    RootNavComponent,
+    CreateEventsFormComponent
   ],
   imports: [
     BrowserModule,
