@@ -14,7 +14,6 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CreateEventsComponent } from './create-events/create-events.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -31,7 +30,6 @@ import { CreateEventsFormComponent } from './create-events-form/create-events-fo
 @NgModule({
   declarations: [
     AppComponent,
-    CreateEventsComponent,
     RegisterFormComponent,
     HomeComponent,
     FooterComponent,
@@ -42,7 +40,7 @@ import { CreateEventsFormComponent } from './create-events-form/create-events-fo
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-  
+
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
