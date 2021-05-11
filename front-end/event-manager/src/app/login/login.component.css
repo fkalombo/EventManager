@@ -9,4 +9,8 @@
     margin: auto;
 }
 
+main{
+    height: 1000px;
+    background-image: url('logo.jpg');
+}
 
