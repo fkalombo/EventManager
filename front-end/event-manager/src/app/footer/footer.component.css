@@ -1,0 +1,14 @@
+h5{
+    background-color:rgba(0,0,0,0.9);
+    padding: 20px;
+    margin: 0;
+    position:fixed;
+    width: 99%;
+    color: white;
+    bottom: 0;
+    
+}
+
+p{
+    color: white;
+}
