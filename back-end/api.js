@@ -21,14 +21,32 @@ router.use((request, response, next) => {
     next();
 })
 
-/*** setting the routes */
-router.route('/generaltickets').get((request, response) => {
+/*** /api/generaltickets/getAllGeneralTickets */
+router.route('/generalTickets/getAllGeneralTickets').get((request, response) => {
     
     dboperations.getGeneralTickets().then(result => {
         response.json(result[0]);
     }) 
 })
 
+/*** /api/generaltickets/ */
+router.route('/generalTickets/getTicketById/:id').get((request, response) => {
+    
+    dboperations.getGeneralTicketWithId(request.params.id).then(result => {
+        response.json(result[0]);
+    }) 
+})
+
+/*** /api/generaltickets/ */
+router.route('/generalTickets/insertGeneralTicket').post((request, response) => {
+    
+    //de-structure the returned request body's generalticket
+    let genTicket = {...request.body}
+
+    dboperations.addGeneralTicket(genTicket).then(result => {
+        response.status(201).json(result);
+    }) 
+})
 
 /** Port to listen on for incoming api requests */
 let port = process.env.PORT || 8090;
