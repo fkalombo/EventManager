@@ -1,0 +1,12 @@
+.input-space{
+    margin: 5px;
+    padding: 10px;
+}
+#loginForm{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    margin: auto;
+}
+
+
