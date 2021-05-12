@@ -24,6 +24,9 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { RootNavComponent } from './root-nav/root-nav.component';
 import {MatListModule} from '@angular/material/list';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DisplayEventsComponent } from './display-events/display-events.component';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -34,7 +37,10 @@ import {MatListModule} from '@angular/material/list';
     RegisterFormComponent,
     HomeComponent,
     FooterComponent,
-    RootNavComponent
+    RootNavComponent,
+    PageNotFoundComponent,
+    DisplayEventsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
