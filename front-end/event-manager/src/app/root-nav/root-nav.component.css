@@ -1,8 +1,9 @@
 .sidenav-container {
   height: 100%;
-  background-size:cover; 
+  background-size:cover;
   width:auto;
-  background-image: url(C:\Users\bbdnet2453\Projects\EventManager\front-end\event-manager\src\assets\images\backgroundImage.jpg);
+  
+  background-image: url(../../assets/images/backgroundImage.jpg);
 
 }
 
@@ -26,4 +27,5 @@
 
 .event-man{
   font-family: cursive;
+  color: black;
 }

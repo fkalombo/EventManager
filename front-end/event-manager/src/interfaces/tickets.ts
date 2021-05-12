@@ -1,5 +1,6 @@
 export interface Tickets {
-  ticketType: number;
   generalPrice: number;
+  generalAvail: number;
   vipPrice: number;
+  vipAvail: number;
 }
