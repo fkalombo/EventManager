@@ -14,20 +14,21 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class CreateEventsFormComponent implements OnInit {
   eventForm = new FormGroup({
     events: new FormGroup({
-      title: new FormControl("",[Validators.required]),
-      subtitle: new FormControl("",[Validators.required]),
-      date: new FormControl("",[Validators.required]),
-      startTime: new FormControl("",[Validators.required, Validators.pattern('^(((([0-1][0-9])|(2[0-3])):?[0-5][0-9])|(24:?00))')]),
-      endTime: new FormControl("",[Validators.required, Validators.pattern('^(((([0-1][0-9])|(2[0-3])):?[0-5][0-9])|(24:?00))')]),
-      capacity: new FormControl("",[Validators.required])
+      Description: new FormControl("",[Validators.required]),
+      MaxNumGuests: new FormControl("",[Validators.required]),
+      EventDate: new FormControl("",[Validators.required]),
+      StartTime: new FormControl("",[Validators.required, Validators.pattern('^(((([0-1][0-9])|(2[0-3])):?[0-5][0-9])|(24:?00))')]),
+      EndTime: new FormControl("",[Validators.required, Validators.pattern('^(((([0-1][0-9])|(2[0-3])):?[0-5][0-9])|(24:?00))')]),
+      EventTitle: new FormControl("",[Validators.required]),
+      EventSubtitle: new FormControl("",[Validators.required]),
     }),
     venue: new FormGroup({
-      name: new FormControl("",[Validators.required]),
-      streetAddress: new FormControl("",[Validators.required]),
-      city: new FormControl("",[Validators.required]),
-      province: new FormControl("",[Validators.required]),
-      country: new FormControl("",[Validators.required]),
-      zipCode: new FormControl("",[Validators.required, Validators.minLength(4), Validators.pattern('[0-9]*')])
+      Country: new FormControl("",[Validators.required]),
+      Province: new FormControl("",[Validators.required]),
+      StreetAddress: new FormControl("",[Validators.required]),
+      VenueName: new FormControl("",[Validators.required]),
+      City: new FormControl("",[Validators.required]),
+      ZipCode: new FormControl("",[Validators.required, Validators.minLength(4), Validators.pattern('[0-9]*')])
     }),
     tickets: new FormGroup({
       generalAvail: new FormControl("",[Validators.required, Validators.pattern('[0-9.]*')]),
@@ -51,5 +52,4 @@ export class CreateEventsFormComponent implements OnInit {
     this.venueService.addVenue(this.eventForm.get('venue')?.value);
     this.ticketService.addTicket(this.eventForm.get('tickets')?.value);
   }
-
 }
