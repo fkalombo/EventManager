@@ -1,11 +1,11 @@
 const dboperations = require('./dboperations');
-let Db = require('./dboperations');
-let genTicket = require('./models/GeneralTicket');
-let user = require('./models/User')
+//let Db = require('./dboperations');
+//let genTicket = require('./models/GeneralTicket');
+//let user = require('./models/User')
 
 /** Importing required modules */
 let express = require('express');
-let bodyParser = require('body-parser');
+//let bodyParser = require('body-parser');
 let cors = require('cors');
 let app = express();
 let router = express.Router();
@@ -22,11 +22,9 @@ router.use((request, response, next) => {
     next();
 })
 
-/*** 
- * GeneralTickets endpoints
- */
+/*****************     GeneralTickets Queries Start     ************/
 // GET
-router.route('/generalTickets/getAll').get((request, response) => {
+router.route('/general-tickets/getAll').get((request, response) => {
     
     dboperations.getGeneralTickets().then(result => {
         response.json(result[0]);
@@ -34,7 +32,7 @@ router.route('/generalTickets/getAll').get((request, response) => {
 })
 
 //Get:Id
-router.route('/generalTickets/getById/:id').get((request, response) => {
+router.route('/general-tickets/getById/:id').get((request, response) => {
     
     dboperations.getGeneralTicketWithId(request.params.id).then(result => {
         response.json(result[0]);
@@ -42,7 +40,7 @@ router.route('/generalTickets/getById/:id').get((request, response) => {
 })
 
 // POST
-router.route('/generalTickets/insert').post((request, response) => {
+router.route('/general-tickets/insert').post((request, response) => {
     
     //de-structure the returned request body's generalticket
     let genTicket = {...request.body}
@@ -53,7 +51,7 @@ router.route('/generalTickets/insert').post((request, response) => {
 })
 
 // PUT
-router.route('/generalTickets/updateById').put((request, response) => {
+router.route('/general-tickets/updateById').put((request, response) => {
 
     let genTicket = {...request.body}
 
@@ -62,10 +60,39 @@ router.route('/generalTickets/updateById').put((request, response) => {
     })
 })
 
+/*****************     GeneralTickets Queries End     ************/
 
-/***
- * Users Section
- */
+
+
+/*****************     vipTickets Queries Start     ************/
+
+router.route('/vip-tickets/getAll').get((request, response) => {
+    
+    dboperations.getVIPTickets().then(result => {
+        response.json(result[0]);
+    }) 
+})
+
+//Get:Id
+router.route('/vip-tickets/getById/:id').get((request, response) => {
+    
+    dboperations.getVIPTicketById(request.params.id).then(result => {
+        response.json(result[0]);
+    }) 
+})
+
+router.route('/vip-tickets/insert').post((request, response) => {
+    
+    let ticket = {...request.body}
+
+    dboperations.insertVIPTicket(ticket).then(result => {
+        response.status(201).json(result);
+    }) 
+})
+/*****************     vipTickets Queries End     ************/
+
+
+/******************** User Queries Start  ***************/
 // GET
 router.route('/users/getAll').get((request, response) => {
     
@@ -92,6 +119,92 @@ router.route('/users/insert').post((request, response) => {
         response.status(201).json(result);
     }) 
 })
+/******************** User Queries Start  ***************/
+
+
+/******************** Ticket Queries Start  ***************/
+router.route('/tickets/getAll').get((request, response) => {
+    
+    dboperations.getTickets().then(result => {
+        response.json(result[0]);
+    }) 
+})
+
+//Get:Id
+router.route('/tickets/getById/:id').get((request, response) => {
+    
+    dboperations.getTicketById(request.params.id).then(result => {
+        response.json(result[0]);
+    }) 
+})
+
+// POST
+router.route('/tickets/insert').post((request, response) => {
+    
+    let ticket = {...request.body}
+
+    dboperations.insertTicket(ticket).then(result => {
+        response.status(201).json(result);
+    }) 
+})
+/*********************************  Queries End ***********************************/
+
+
+/******************** Venues Queries Start  ***************/
+router.route('/venues/getAll').get((request, response) => {
+    
+    dboperations.getVenues().then(result => {
+        response.json(result[0]);
+    }) 
+})
+
+//Get:Id
+router.route('/venues/getById/:id').get((request, response) => {
+    
+    dboperations.getVenueById(request.params.id).then(result => {
+        response.json(result[0]);
+    }) 
+})
+
+// POST
+router.route('/venues/insert').post((request, response) => {
+    
+    let venue = {...request.body}
+
+    dboperations.insertVenue(venue).then(result => {
+        response.status(201).json(result);
+    }) 
+})
+/*********************************  Queries End ***********************************/
+
+
+
+/******************** Events Queries Start  ***************/
+router.route('/events/getAll').get((request, response) => {
+    
+    dboperations.getEvents().then(result => {
+        response.json(result[0]);
+    }) 
+})
+
+//Get:Id
+router.route('/events/getById/:id').get((request, response) => {
+    
+    dboperations.getEventById(request.params.id).then(result => {
+        response.json(result[0]);
+    }) 
+})
+
+// POST
+router.route('/events/insert').post((request, response) => {
+    
+    let event = {...request.body}
+
+    dboperations.insertEvent(event).then(result => {
+        response.status(201).json(result);
+    }) 
+})
+/********************************* Events Queries End ***********************************/
 
 
 

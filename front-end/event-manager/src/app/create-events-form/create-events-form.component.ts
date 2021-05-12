@@ -12,29 +12,29 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./create-events-form.component.css']
 })
 export class CreateEventsFormComponent implements OnInit {
-
   eventForm = new FormGroup({
     events: new FormGroup({
-      title: new FormControl(),
-      subtitle: new FormControl(),
-      date: new FormControl(),
-      startTime: new FormControl(),
-      endTime: new FormControl(),
-      capacity: new FormControl()
+      Description: new FormControl("",[Validators.required]),
+      MaxNumGuests: new FormControl("",[Validators.required]),
+      EventDate: new FormControl("",[Validators.required]),
+      StartTime: new FormControl("",[Validators.required, Validators.pattern('^(((([0-1][0-9])|(2[0-3])):?[0-5][0-9])|(24:?00))')]),
+      EndTime: new FormControl("",[Validators.required, Validators.pattern('^(((([0-1][0-9])|(2[0-3])):?[0-5][0-9])|(24:?00))')]),
+      EventTitle: new FormControl("",[Validators.required]),
+      EventSubtitle: new FormControl("",[Validators.required]),
     }),
     venue: new FormGroup({
-      name: new FormControl(),
-      streetAddress: new FormControl(),
-      city: new FormControl(),
-      province: new FormControl(),
-      country: new FormControl(),
-      zipCode: new FormControl()
+      Country: new FormControl("",[Validators.required]),
+      Province: new FormControl("",[Validators.required]),
+      StreetAddress: new FormControl("",[Validators.required]),
+      VenueName: new FormControl("",[Validators.required]),
+      City: new FormControl("",[Validators.required]),
+      ZipCode: new FormControl("",[Validators.required, Validators.minLength(4), Validators.pattern('[0-9]*')])
     }),
     tickets: new FormGroup({
-      generalPrice: new FormControl(),
-      generalAvail: new FormControl(),
-      vipPrice: new FormControl(),
-      vipAvail: new FormControl()
+      generalAvail: new FormControl("",[Validators.required, Validators.pattern('[0-9.]*')]),
+      generalPrice: new FormControl("",[Validators.required, Validators.pattern('^[0-9]{1,4}([,.][0-9]{1,2})?$')]),
+      vipAvail: new FormControl("",[Validators.required, Validators.pattern('[0-9]*')]),
+      vipPrice: new FormControl("",[Validators.required, Validators.pattern('^[0-9]{1,4}([,.][0-9]{1,2})?$')]),
     })
   })
 
@@ -52,5 +52,4 @@ export class CreateEventsFormComponent implements OnInit {
     this.venueService.addVenue(this.eventForm.get('venue')?.value);
     this.ticketService.addTicket(this.eventForm.get('tickets')?.value);
   }
-
 }

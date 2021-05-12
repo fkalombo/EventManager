@@ -1,6 +1,32 @@
 mat-card{
-    padding: 40px;
-    max-width: 600px;
-    margin: 40px auto;
-    border-radius: 4px;
-  }
+  padding: 40px;
+  max-width: 600px;
+  margin: 40px auto;
+  border-radius: 4px;
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+mat-toolbar{
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  font-family:italic;
+}
+
+mat-form-field{
+  font-family:italic;
+
+}
+
+input {
+  border: none;
+  background: none;
+  padding: 0;
+  outline: none;
+  font: inherit;
+  text-align: center;
+  color: currentColor;
+}

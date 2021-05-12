@@ -11,7 +11,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class VenueService {
 
-  private eventsUrl = 'api/';  // URL to web api
+  private eventsUrl = 'https://jstevents.herokuapp.com/api/venues/insert';  // URL to web api
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json'})
@@ -22,11 +22,12 @@ export class VenueService {
   ) { }
 
 
-  addVenue(venue: Venue): void {
-    console.log(venue);
-  }
   /** POST: add a new hero to the server */
-  // addVenue((venue: Venue): Observable<Venue> {
-    // return this.http.post<Venue>(this.eventsUrl, venue, this.httpOptions);
-  // }
+  addVenue(venue: Venue): Observable<Venue> {
+    //console.log(venue);
+    let body = JSON.parse(JSON.stringify(venue));
+    console.log(body);
+
+    return this.http.post<Venue>(this.eventsUrl,body, this.httpOptions);
+  }
 }

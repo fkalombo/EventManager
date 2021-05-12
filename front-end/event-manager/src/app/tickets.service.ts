@@ -9,7 +9,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class TicketsService {
 
-  private eventsUrl = 'api/';  // URL to web api
+  private eventsUrl = 'https://jstevents.herokuapp.com/api/tickets/insert';  // URL to web api
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json'})
@@ -18,12 +18,10 @@ export class TicketsService {
     private http: HttpClient,
   ) { }
 
-  addTicket(ticket: Tickets): void {
-    console.log(ticket);
-  }
-  /** POST: add a new hero to the server */
-  // addTicket((ticket: Tickets): Observable<Tickets> {
-    // return this.http.post<Tickets>(this.eventsUrl, ticket, this.httpOptions);
-  // }
+  addTicket(ticket: Tickets): Observable<Tickets> {
+    let body = JSON.parse(JSON.stringify(ticket));
+    console.log(body);
 
+    return this.http.post<Tickets>(this.eventsUrl,body, this.httpOptions);
+  }
 }
