@@ -14,6 +14,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -31,7 +32,8 @@ import { DisplayComponent } from './display/display.component';
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterFormComponent,
+    LoginComponent,
+RegisterFormComponent,
     HomeComponent,
     FooterComponent,
     RootNavComponent,
