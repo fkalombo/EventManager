@@ -24,8 +24,10 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { RootNavComponent } from './root-nav/root-nav.component';
 import {MatListModule} from '@angular/material/list';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DisplayEventsComponent } from './display-events/display-events.component';
+import { AboutComponent } from './about/about.component';
 import { CreateEventsFormComponent } from './create-events-form/create-events-form.component';
-import { DisplayComponent } from './display/display.component';
 
 
 
@@ -33,12 +35,14 @@ import { DisplayComponent } from './display/display.component';
   declarations: [
     AppComponent,
     LoginComponent,
-RegisterFormComponent,
+    RegisterFormComponent,
     HomeComponent,
     FooterComponent,
     RootNavComponent,
+    PageNotFoundComponent,
+    DisplayEventsComponent,
+    AboutComponent,
     CreateEventsFormComponent,
-    DisplayComponent
   ],
   imports: [
     BrowserModule,
