@@ -9,7 +9,8 @@ import { Event } from './../interfaces/event';
 })
 export class EventService {
 
-  private eventsUrl = 'https://jstevents.herokuapp.com/api/events/insert';  // URL to web api
+  private eventsUrlInsert = 'https://jstevents.herokuapp.com/api/events/insert';  // URL to web api
+  private eventsUrlGet = 'https://jstevents.herokuapp.com/api/events/get';  // URL to web api
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json'})
@@ -25,6 +26,17 @@ export class EventService {
     let body = JSON.parse(JSON.stringify(event));
     console.log(body);
 
-    return this.http.post<Event>(this.eventsUrl,body, this.httpOptions);
+    return this.http.post<Event>(this.eventsUrlInsert,body, this.httpOptions)
   }
+
+  async getEvent(): Promise<Observable<any>> {
+    let eventsList = await this.http.get(this.eventsUrlGet);
+    console.log(eventsList);
+
+    return eventsList;
+  }
+
+
+
+
 }
