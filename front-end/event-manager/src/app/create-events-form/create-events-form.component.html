@@ -1,24 +1,26 @@
-
-
 <mat-card fxFlex="44">
 
-  <form class="form" fxLayoutAlign="stretch" fxLayout="column" [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+  <form class="form" fxLayoutAlign="stretch" fxLayout="column" [formGroup]="events" (ngSubmit)="onSubmit()">
     <mat-toolbar color="primary">Event Information</mat-toolbar>
-    <mat-form-field formGroupName="events" >
+    <mat-form-field>
+      <input matInput placeholder="UserID" formControlName="EventCreatorId" required >
+      <mat-error>This needs to be filled in</mat-error>
+    </mat-form-field>
+    <mat-form-field>
       <input matInput placeholder="Title" formControlName="EventTitle" required >
       <mat-error>This needs to be filled in</mat-error>
     </mat-form-field>
 
-    <mat-form-field formGroupName="events">
+    <mat-form-field>
       <input matInput placeholder="Subtitle" formControlName="EventSubtitle" required>
       <mat-error>This needs to be filled in</mat-error>
     </mat-form-field>
-    <mat-form-field formGroupName="events">
+    <mat-form-field>
       <input matInput placeholder="Description" formControlName="Description" required>
       <mat-error>This needs to be filled in</mat-error>
     </mat-form-field>
 
-    <mat-form-field formGroupName="events">
+    <mat-form-field>
       <input matInput placeholder="Date"[matDatepicker]="picker" formControlName='EventDate' required>
       <mat-datepicker-toggle matSuffix [for]="picker">
           <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
@@ -27,73 +29,29 @@
       <mat-error>Select from drop down menu</mat-error>
     </mat-form-field>
 
-    <mat-form-field formGroupName="events">
+    <mat-form-field>
       <input matInput placeholder="Start Time" formControlName="StartTime" required>
       <mat-error>24 hour format .. : ..</mat-error>
     </mat-form-field>
 
-    <mat-form-field formGroupName="events">
+    <mat-form-field>
       <input matInput placeholder="End Time" formControlName="EndTime" required>
       <mat-error>24 hour format .. : .</mat-error>
     </mat-form-field>
 
-    <mat-form-field formGroupName="events">
+    <mat-form-field>
       <input matInput placeholder="Capacity" formControlName="MaxNumGuests" required>
       <mat-error>This needs to be filled in</mat-error>
     </mat-form-field>
-
-    <mat-toolbar color="primary">Venue Information</mat-toolbar>
-    <mat-form-field formGroupName="venue">
-      <input matInput placeholder="Name" formControlName="VenueName" required>
+    <mat-form-field>
+      <input matInput placeholder="Banner ID" formControlName="BannerId" required>
       <mat-error>This needs to be filled in</mat-error>
     </mat-form-field>
 
-    <mat-form-field formGroupName="venue">
-      <input matInput placeholder="Street Address" formControlName="StreetAddress" required>
-      <mat-error>This needs to be filled in</mat-error>
-    </mat-form-field>
 
-    <mat-form-field formGroupName="venue">
-      <input matInput placeholder="City" formControlName="City" required>
-      <mat-error>This needs to be filled in</mat-error>
-    </mat-form-field>
-
-    <mat-form-field formGroupName="venue">
-      <input matInput placeholder="Province" formControlName="Province" required>
-      <mat-error>This needs to be filled in</mat-error>
-    </mat-form-field>
-
-    <mat-form-field formGroupName="venue">
-      <input matInput placeholder="Country" formControlName="Country" required>
-      <mat-error>This needs to be filled in</mat-error>
-    </mat-form-field>
-
-    <mat-form-field formGroupName="venue">
-      <input matInput placeholder="ZipCode" formControlName="ZipCode" required>
-      <mat-error>Min of four numbers</mat-error>
-    </mat-form-field>
-
-    <mat-toolbar color="primary">Ticket Information</mat-toolbar>
-    <mat-form-field formGroupName="tickets">
-      <input matInput placeholder="General Tickets Available" formControlName="generalAvail" required>
-      <mat-error>This needs to be filled in</mat-error>
-    </mat-form-field>
-
-    <mat-form-field formGroupName="tickets">
-      <input matInput placeholder="General Tickets Price" formControlName="generalPrice" required>
-      <mat-error>Currency format e.g 100.00</mat-error>
-    </mat-form-field>
-
-    <mat-form-field formGroupName="tickets">
-      <input matInput placeholder="VIP Tickets Available" formControlName="vipAvail" required>
-      <mat-error>This needs to be filled in</mat-error>
-    </mat-form-field>
-
-    <mat-form-field formGroupName="tickets">
-      <input matInput placeholder="VIP Tickets Price" formControlName="vipPrice" required>
-      <mat-error>Currency format e.g 100.00</mat-error>
-    </mat-form-field>
+    <button mat-raised-button class="btn" color="primary" [routerLink]="['']">Home</button>
     <button mat-raised-button type="submit" class="btn" color="primary">Save</button>
+    <button mat-raised-button class="btn" color="primary" [routerLink]="['../create-venue']">Next</button>
   </form>
 
 
