@@ -24,6 +24,7 @@ import { FooterComponent } from './footer/footer.component';
 import { RootNavComponent } from './root-nav/root-nav.component';
 import {MatListModule} from '@angular/material/list';
 import { CreateEventsFormComponent } from './create-events-form/create-events-form.component';
+import { DisplayComponent } from './display/display.component';
 
 
 
@@ -34,7 +35,8 @@ import { CreateEventsFormComponent } from './create-events-form/create-events-fo
     HomeComponent,
     FooterComponent,
     RootNavComponent,
-    CreateEventsFormComponent
+    CreateEventsFormComponent,
+    DisplayComponent
   ],
   imports: [
     BrowserModule,
