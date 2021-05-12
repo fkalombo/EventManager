@@ -12,12 +12,15 @@ export class RegisterFormComponent implements OnInit {
   formGroup: FormGroup  = new FormGroup({
       Name: new FormControl("",[Validators.required]),
       Surname: new FormControl("",[Validators.required]),
+      Email: new FormControl("",[Validators.required]),
+      EmailConfirmed:  new FormControl(0,[Validators.required]),
+      PasswordHash: new FormControl("",[Validators.required]),
+      UserName: new FormControl("username",[Validators.required]),
       DateOfBirth: new FormControl("",[Validators.required]),
       GenderId: new FormControl("",[Validators.required]),
-      Username: new FormControl("username",[Validators.required]),
-      Email: new FormControl("",[Validators.required]),
-      PasswordHash: new FormControl("",[Validators.required]),
-      EmailConfirmed:  new FormControl(0,[Validators.required])
+      
+      
+      
       
     })
 
@@ -39,9 +42,6 @@ export class RegisterFormComponent implements OnInit {
       console.log("Incorrect data");
       
     }
-    this.formGroup.reset()
-    
-    this.formGroup.clearValidators();
     
   }
 }
