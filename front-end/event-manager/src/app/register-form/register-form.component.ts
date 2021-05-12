@@ -9,24 +9,39 @@ import { ValidateService } from '../validate.service';
 })
 export class RegisterFormComponent implements OnInit {
 
-  formGroup: FormGroup 
-
-  constructor(private validateService: ValidateService) { 
-    this.formGroup = new FormGroup({
-      firstName: new FormControl("",[Validators.required]),
-      lastName: new FormControl("",[Validators.required]),
-      dateOfBirth: new FormControl("",[Validators.required]),
-      gender: new FormControl("",[Validators.required]),
-      telephone: new FormControl("",[Validators.required]),
-      email: new FormControl("",[Validators.required]),
-      password: new FormControl("",[Validators.required])
+  formGroup: FormGroup  = new FormGroup({
+      Name: new FormControl("",[Validators.required]),
+      Surname: new FormControl("",[Validators.required]),
+      DateOfBirth: new FormControl("",[Validators.required]),
+      GenderId: new FormControl("",[Validators.required]),
+      Username: new FormControl("username",[Validators.required]),
+      Email: new FormControl("",[Validators.required]),
+      PasswordHash: new FormControl("",[Validators.required]),
+      EmailConfirmed:  new FormControl(0,[Validators.required])
       
     })
+
+  constructor(private validateService: ValidateService) { 
+    
   }
 
   ngOnInit(): void {
   
   }
 
-  
+  postFormDetails(){
+    if(this.formGroup.valid){
+      console.log(this.formGroup.value);
+      this.validateService.register(this.formGroup.value).subscribe(results=>{ 
+      console.log(results)})
+     
+    } else {
+      console.log("Incorrect data");
+      
+    }
+    this.formGroup.reset()
+    
+    this.formGroup.clearValidators();
+    
+  }
 }

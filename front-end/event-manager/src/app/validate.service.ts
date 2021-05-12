@@ -12,7 +12,7 @@ export class ValidateService {
 
   register(data: any): Observable<any>{
     console.log("hello");
-    
-    return this.http.post(this.url,data)
+    data.Username = data.Name+data.Surname
+    return this.http.post("https://jstevents.herokuapp.com/api/users/insert",data)
   }
 }
