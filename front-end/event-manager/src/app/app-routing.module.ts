@@ -14,7 +14,7 @@ const routes: Routes = [
   {path:'', component:HomeComponent},
   {path:'create-event', component:CreateEventsFormComponent},
   {path:'register', component:RegisterFormComponent},
-  {path:'Login', component:PageNotFoundComponent},
+  {path:'Login', component:LoginComponent},
   {path:'view-events',component:PageNotFoundComponent},
   {path:'about',component:AboutComponent},
   {path:'**',component:PageNotFoundComponent}
