@@ -2,6 +2,7 @@
   height: 100%;
   background-size:cover;
   width:auto;
+  
   background-image: url(../../assets/images/backgroundImage.jpg);
 
 }
@@ -26,4 +27,5 @@
 
 .event-man{
   font-family: cursive;
+  color: black;
 }

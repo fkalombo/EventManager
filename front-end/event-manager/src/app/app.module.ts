@@ -14,6 +14,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -23,20 +24,25 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { RootNavComponent } from './root-nav/root-nav.component';
 import {MatListModule} from '@angular/material/list';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DisplayEventsComponent } from './display-events/display-events.component';
+import { AboutComponent } from './about/about.component';
 import { CreateEventsFormComponent } from './create-events-form/create-events-form.component';
-import { DisplayComponent } from './display/display.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
     RegisterFormComponent,
     HomeComponent,
     FooterComponent,
     RootNavComponent,
+    PageNotFoundComponent,
+    DisplayEventsComponent,
+    AboutComponent,
     CreateEventsFormComponent,
-    DisplayComponent
   ],
   imports: [
     BrowserModule,
