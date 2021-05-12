@@ -9,7 +9,7 @@ import { Event } from './../interfaces/event';
 })
 export class EventService {
 
-  private eventsUrl = 'api/';  // URL to web api
+  private eventsUrl = 'https://jstevents.herokuapp.com/api/events/insert';  // URL to web api
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json'})
@@ -19,14 +19,12 @@ export class EventService {
     private http: HttpClient
   ) { }
 
-  addEvent(event: Event): void {
-    console.log(event);
 
-  }
   /** POST: add a new hero to the server */
-  // addEvent(event: Event): Observable<Event> {
-    // return this.http.post<Event>(this.eventsUrl, event, this.httpOptions);
-  // }
+  addEvent(event: Event): Observable<Event> {
+    let body = JSON.parse(JSON.stringify(event));
+    console.log(body);
 
-
+    return this.http.post<Event>(this.eventsUrl,body, this.httpOptions);
+  }
 }
