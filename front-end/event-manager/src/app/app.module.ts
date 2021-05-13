@@ -30,6 +30,8 @@ import { AboutComponent } from './about/about.component';
 import { CreateEventsFormComponent } from './create-events-form/create-events-form.component';
 import { CreateVenueFormComponent } from './create-venue-form/create-venue-form.component';
 import { CreateTicketFormComponent } from './create-ticket-form/create-ticket-form.component';
+import { EventEventComponent } from './event-event/event-event.component';
+
 
 
 
@@ -47,6 +49,7 @@ import { CreateTicketFormComponent } from './create-ticket-form/create-ticket-fo
     CreateEventsFormComponent,
     CreateVenueFormComponent,
     CreateTicketFormComponent,
+    EventEventComponent,
   ],
   imports: [
     BrowserModule,
