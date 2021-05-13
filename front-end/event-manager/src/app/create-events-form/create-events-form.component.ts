@@ -34,10 +34,8 @@ export class CreateEventsFormComponent implements OnInit {
 
   onSubmit(): void {
 
-    this.eventService.addEvent(this.events.value);
-    // this.venueService.addVenue(this.eventForm.get('venue')?.value);
-    // this.ticketService.addTicket(this.eventForm.get('tickets')?.value);
-
-    //this.eventService.getEvent();
+    this.eventService.addEvent(this.events.value).subscribe((log) =>{
+      console.log(log);
+    });
   }
 }

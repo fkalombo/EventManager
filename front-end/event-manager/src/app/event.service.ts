@@ -22,10 +22,10 @@ export class EventService {
 
 
   /** POST: add a new hero to the server */
-  addEvent(event: Event): Observable<Event> {
-    // let stringEvent = JSON.stringify(event);
+  addEvent(event: any): Observable<any> {
     let bodyString = [
       {
+        'EventId': 1,
         'Description': event.Description,
         'MaxNumGuests': event.MaxNumGuests,
         'EventDate': event.EventDate,
@@ -38,12 +38,10 @@ export class EventService {
         'VenueId': null
       }
     ]
-    let stringEvent = JSON.stringify(bodyString[0]);
-    console.log(stringEvent);
-    let body = JSON.parse(stringEvent);
+    let body = JSON.parse(JSON.stringify(bodyString[0]));
     console.log(body);
 
-    return this.http.post<Event>(this.eventsUrlInsert,body, this.httpOptions)
+    return this.http.post<any>(this.eventsUrlInsert,body, this.httpOptions)
   }
 
   async getEvent(): Promise<Observable<any>> {

@@ -29,10 +29,11 @@ export class CreateVenueFormComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit(): void {
-    // this.eventService.addEvent(this.eventForm.get('events')?.value);
-    // this.venueService.addVenue(this.eventForm.get('venue')?.value);
-    // this.ticketService.addTicket(this.eventForm.get('tickets')?.value);
+    this.venueService.addVenue(this.venue.value).subscribe((log) =>{
+      console.log(log);
 
+
+    })
   }
 
 }
