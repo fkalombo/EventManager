@@ -30,3 +30,8 @@ input {
   text-align: center;
   color: currentColor;
 }
+
+.button_create {
+  max-width: 200px;
+  padding: 2px;
+}

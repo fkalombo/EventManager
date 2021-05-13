@@ -15,12 +15,10 @@ export class CreateEventsFormComponent implements OnInit {
 
   events = new FormGroup({
     Description: new FormControl("",[Validators.required]),
-    MaxNumGuests: new FormControl("",[Validators.required]),
     EventDate: new FormControl("",[Validators.required]),
     StartTime: new FormControl("",[Validators.required, Validators.pattern('^(((([0-1][0-9])|(2[0-3])):?[0-5][0-9])|(24:?00))')]),
     EndTime: new FormControl("",[Validators.required, Validators.pattern('^(((([0-1][0-9])|(2[0-3])):?[0-5][0-9])|(24:?00))')]),
     EventCreatorId: new FormControl("",[Validators.required]),
-    BannerId: new FormControl("",[Validators.required]),
     EventTitle: new FormControl("",[Validators.required]),
     EventSubtitle: new FormControl("",[Validators.required]),
   })

@@ -19,7 +19,8 @@ export class CreateVenueFormComponent implements OnInit {
     StreetAddress: new FormControl("",[Validators.required]),
     VenueName: new FormControl("",[Validators.required]),
     City: new FormControl("",[Validators.required]),
-    ZipCode: new FormControl("",[Validators.required, Validators.minLength(4), Validators.pattern('[0-9]*')])
+    ZipCode: new FormControl("",[Validators.required, Validators.minLength(4), Validators.pattern('[0-9]*')]),
+    Capacity: new FormControl("",[Validators.required, Validators.pattern('[0-9]*')])
   })
   constructor(
     private venueService: VenueService

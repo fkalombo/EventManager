@@ -27,12 +27,11 @@ export class EventService {
     let bodyString = [
       {
         'Description': event.Description,
-        'MaxNumGuests': event.MaxNumGuests,
         'EventDate': event.EventDate,
         'StartTime': event.StartTime,
         'EndTime': event.EndTime,
         'EventCreatorId': event.EventCreatorId,
-        'BannerId': event.BannerId,
+        'BannerId': 1,
         'EventTitle': event.EventTitle,
         'EventSubTitle': event.EventSubtitle,
         'VenueId': null

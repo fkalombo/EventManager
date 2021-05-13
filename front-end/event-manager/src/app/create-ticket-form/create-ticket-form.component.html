@@ -21,9 +21,9 @@
       <input matInput placeholder="VIP Tickets Price" formControlName="vipPrice" required>
       <mat-error>Currency format e.g 100.00</mat-error>
     </mat-form-field>
-    <button mat-raised-button class="btn" color="primary" [routerLink]="['../create-venue']">Back</button>
-    <button mat-raised-button type="submit" class="btn" color="primary" [disabled]="!tickets.valid">Save</button>
-    <button mat-raised-button class="btn" color="primary" [routerLink]="['']">Home</button>
+    <section>
+      <button mat-raised-button type="submit" class="button_create" color="primary" [disabled]="!tickets.valid"  [routerLink]="['']">Create</button>
+    </section>
   </form>
 
 
