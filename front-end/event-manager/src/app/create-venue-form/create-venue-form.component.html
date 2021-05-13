@@ -32,8 +32,8 @@
       <mat-error>Min of four numbers</mat-error>
     </mat-form-field>
     <button mat-raised-button class="btn" color="primary" [routerLink]="['../create-event']">Back</button>
-    <button mat-raised-button type="submit" class="btn" color="primary">Save</button>
-    <button mat-raised-button class="btn" color="primary" [routerLink]="['../create-ticket']">Next</button>
+    <button mat-raised-button type="submit" class="btn" color="primary" [disabled]="!venue.valid">Save</button>
+    <button mat-raised-button class="btn" color="primary" [routerLink]="['../create-ticket']" [disabled]="!venue.valid">Next</button>
   </form>
 
 

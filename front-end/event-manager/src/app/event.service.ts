@@ -28,7 +28,7 @@ export class EventService {
       {
         'Description': event.Description,
         'MaxNumGuests': event.MaxNumGuests,
-        'EventDate': event.EndTime,
+        'EventDate': event.EventDate,
         'StartTime': event.StartTime,
         'EndTime': event.EndTime,
         'EventCreatorId': event.EventCreatorId,
