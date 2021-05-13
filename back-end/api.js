@@ -1,6 +1,11 @@
 const dboperations = require('./dboperations');
-let express = require('express');
+//let Db = require('./dboperations');
+//let genTicket = require('./models/GeneralTicket');
+//let user = require('./models/User')
 
+/** Importing required modules */
+let express = require('express');
+//let bodyParser = require('body-parser');
 let cors = require('cors');
 let app = express();
 let router = express.Router();
@@ -108,6 +113,91 @@ router.route('/users/register').post(async (request, response) => {
 
 // POST
 router.route('/users/login').post((request, response) => {
+    
+    let event = {...request.body}
+
+    dboperations.insertEvent(event).then(result => {
+        response.status(201).json(result);
+    }) 
+})
+/******************** User Queries Start  ***************/
+
+
+/******************** Ticket Queries Start  ***************/
+router.route('/tickets/getAll').get((request, response) => {
+    
+    dboperations.getTickets().then(result => {
+        response.json(result[0]);
+    }) 
+})
+
+//Get:Id
+router.route('/tickets/getById/:id').get((request, response) => {
+    
+    dboperations.getTicketById(request.params.id).then(result => {
+        response.json(result[0]);
+    }) 
+})
+
+// POST
+router.route('/tickets/insert').post((request, response) => {
+    
+    let ticket = {...request.body}
+
+    dboperations.insertTicket(ticket).then(result => {
+        response.status(201).json(result);
+    }) 
+})
+/*********************************  Queries End ***********************************/
+
+
+/******************** Venues Queries Start  ***************/
+router.route('/venues/getAll').get((request, response) => {
+    
+    dboperations.getVenues().then(result => {
+        response.json(result[0]);
+    }) 
+})
+
+//Get:Id
+router.route('/venues/getById/:id').get((request, response) => {
+    
+    dboperations.getVenueById(request.params.id).then(result => {
+        response.json(result[0]);
+    }) 
+})
+
+// POST
+router.route('/venues/insert').post((request, response) => {
+    
+    let venue = {...request.body}
+
+    dboperations.insertVenue(venue).then(result => {
+        response.status(201).json(result);
+    }) 
+})
+/*********************************  Queries End ***********************************/
+
+
+
+/******************** Events Queries Start  ***************/
+router.route('/events/getAll').get((request, response) => {
+    
+    dboperations.getEvents().then(result => {
+        response.json(result[0]);
+    }) 
+})
+
+//Get:Id
+router.route('/events/getById/:id').get((request, response) => {
+    
+    dboperations.getEventById(request.params.id).then(result => {
+        response.json(result[0]);
+    }) 
+})
+
+// POST
+router.route('/events/insert').post((request, response) => {
     
     let event = {...request.body}
 

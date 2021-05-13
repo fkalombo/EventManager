@@ -1,0 +1,46 @@
+<mat-card fxFlex="44">
+
+  <form class="form" fxLayoutAlign="stretch" fxLayout="column" [formGroup]="venue" (ngSubmit)="onSubmit()">
+    <mat-toolbar color="primary">Venue Information</mat-toolbar>
+    <mat-form-field>
+      <input matInput placeholder="Name" formControlName="VenueName" required>
+      <mat-error>This needs to be filled in</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Guest Capacity" formControlName="Capacity" required>
+      <mat-error>This needs to be filled in</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Street Address" formControlName="StreetAddress" required>
+      <mat-error>This needs to be filled in</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="City" formControlName="City" required>
+      <mat-error>This needs to be filled in</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Province" formControlName="Province" required>
+      <mat-error>This needs to be filled in</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Country" formControlName="Country" required>
+      <mat-error>This needs to be filled in</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="ZipCode" formControlName="ZipCode" required>
+      <mat-error>Min of four numbers</mat-error>
+    </mat-form-field>
+    <section>
+      <button mat-raised-button type="submit" class="button_create" color="primary" [disabled]="!venue.valid">Create</button>
+      <button mat-raised-button class="button_next" style='float:right' color="accent" [routerLink]="['../create-ticket']" [disabled]="!venue.valid">Next</button>
+    </section>
+  </form>
+
+
+</mat-card>

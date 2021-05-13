@@ -28,6 +28,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { DisplayEventsComponent } from './display-events/display-events.component';
 import { AboutComponent } from './about/about.component';
 import { CreateEventsFormComponent } from './create-events-form/create-events-form.component';
+import { CreateVenueFormComponent } from './create-venue-form/create-venue-form.component';
+import { CreateTicketFormComponent } from './create-ticket-form/create-ticket-form.component';
+import { EventEventComponent } from './event-event/event-event.component';
+
 
 
 
@@ -43,6 +47,9 @@ import { CreateEventsFormComponent } from './create-events-form/create-events-fo
     DisplayEventsComponent,
     AboutComponent,
     CreateEventsFormComponent,
+    CreateVenueFormComponent,
+    CreateTicketFormComponent,
+    EventEventComponent,
   ],
   imports: [
     BrowserModule,

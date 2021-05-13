@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Tickets } from './../interfaces/tickets';
+
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import { Tickets } from 'src/interfaces/tickets';
 
 @Injectable({
   providedIn: 'root'

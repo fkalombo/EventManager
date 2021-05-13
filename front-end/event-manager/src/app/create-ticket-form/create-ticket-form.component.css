@@ -21,10 +21,6 @@ mat-form-field{
 
 }
 
-p{
-  text-align: center;
-}
-
 input {
   border: none;
   background: none;
@@ -39,9 +35,3 @@ input {
   max-width: 200px;
   padding: 2px;
 }
-
-.button_next {
-  max-width: 100px;
-  position:relative;
-}
-
