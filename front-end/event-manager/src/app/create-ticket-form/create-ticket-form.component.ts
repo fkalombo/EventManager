@@ -25,10 +25,7 @@ export class CreateTicketFormComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit(): void {
-    // this.eventService.addEvent(this.eventForm.get('events')?.value);
-    // this.venueService.addVenue(this.eventForm.get('venue')?.value);
-    // this.ticketService.addTicket(this.eventForm.get('tickets')?.value);
-
+    this.ticketService.addTicket(this.tickets.value).subscribe((log) =>{
+      console.log(log);})
   }
-
 }
