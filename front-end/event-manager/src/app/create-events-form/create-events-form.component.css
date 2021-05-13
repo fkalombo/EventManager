@@ -31,6 +31,13 @@ input {
   color: currentColor;
 }
 
-button {
+.button_create {
+  max-width: 200px;
   padding: 2px;
 }
+
+.button_next {
+  max-width: 100px;
+  position:relative;
+}
+

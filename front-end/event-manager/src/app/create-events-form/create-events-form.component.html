@@ -7,12 +7,12 @@
       <mat-error>This needs to be filled in</mat-error>
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Title" formControlName="EventTitle" required >
+      <input matInput placeholder="Event Name" formControlName="EventTitle" required >
       <mat-error>This needs to be filled in</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Subtitle" formControlName="EventSubtitle" required>
+      <input matInput placeholder="Event tag" formControlName="EventSubtitle" required>
       <mat-error>This needs to be filled in</mat-error>
     </mat-form-field>
     <mat-form-field>
@@ -38,20 +38,11 @@
       <input matInput placeholder="End Time" formControlName="EndTime" required>
       <mat-error>24 hour format .. : .</mat-error>
     </mat-form-field>
+    <section>
 
-    <mat-form-field>
-      <input matInput placeholder="Capacity" formControlName="MaxNumGuests" required>
-      <mat-error>This needs to be filled in</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Banner ID" formControlName="BannerId" required>
-      <mat-error>This needs to be filled in</mat-error>
-    </mat-form-field>
-
-
-    <button mat-raised-button class="btn" color="primary" [routerLink]="['']">Home</button>
-    <button mat-raised-button type="submit" class="btn" color="primary" [disabled]="!events.valid">Save</button>
-    <button mat-raised-button class="btn" color="primary" [routerLink]="['../create-venue']" [disabled]="!events.valid">Next</button>
+      <button mat-raised-button type="submit" class="button_create" color="primary">Create</button>
+      <button mat-raised-button class="button_next" style='float:right' color="accent" [routerLink]="['../create-venue']" [disabled]="!events.valid">Next</button>
+    </section>
   </form>
 
 
