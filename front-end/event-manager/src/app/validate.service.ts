@@ -11,8 +11,7 @@ export class ValidateService {
   constructor(private http: HttpClient) { }
 
   register(data: any): Observable<any>{
-    console.log("hello");
-    data.Username = data.Name+data.Surname
-    return this.http.post("https://jstevents.herokuapp.com/api/users/insert",data)
+    data.UserName = data.Email
+    return this.http.post("https://jstevents.herokuapp.com/api/users/insert/",JSON.parse(JSON.stringify(data)))
   }
 }
