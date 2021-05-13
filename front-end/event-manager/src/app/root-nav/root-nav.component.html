@@ -7,7 +7,7 @@
     <mat-nav-list>
       <a mat-list-item [routerLink]="['']">Home</a>
       <a mat-list-item [routerLink]="['create-event']" >Create Event</a>
-      <a mat-list-item [routerLink]="['view-event']" >View Events</a>
+      <a mat-list-item [routerLink]="['view-events']" >View Events</a>
       <a mat-list-item [routerLink]="['about']">About Us</a>
       <a mat-list-item [routerLink]="['register']" >Registration</a>
       <a mat-list-item [routerLink]="['Login']">Login</a>
@@ -24,7 +24,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <h2 class="event-man">  Event-Manager</h2>
+      <h2 class="event-man">  JSt-Events</h2>
     </mat-toolbar>
 
     <ng-content>  </ng-content>

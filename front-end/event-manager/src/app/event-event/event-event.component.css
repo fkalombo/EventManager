@@ -1,0 +1,45 @@
+.event{
+    background-color: rgba(0, 0, 0, 0.3);
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 290px;
+  }
+
+  .event{
+      display:flex;
+      justify-content: space-between;
+  }
+
+  .event:focus {
+
+    outline: none;
+  }
+  .event:active {
+    transform: scale(0.98);
+  }
+
+  .icon:focus {
+
+    outline: none;
+  }
+  .icon:active {
+    color: red;
+    transform: scale(0.98);
+  }
+    
+  .task.reminder {
+    border-left: 5px solid green;
+  }
+  
+  .event {
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+  }
+   .event h2{
+       font-family: cursive;
+   }
+  
