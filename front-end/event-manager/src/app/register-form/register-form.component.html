@@ -1,6 +1,6 @@
 <section fxLayoutAlign="center center" fxFlexFill class="main-div">
-    <mat-card *ngIf="!formGroup.valid" fxFlex="44"> 
-        <mat-toolbar color="primary">Registration</mat-toolbar>
+    <mat-card *ngIf="!formGroup.valid" fxFlex="44">
+        <mat-toolbar color="primary">Profile</mat-toolbar>
         <form class="form"  fxLayoutAlign="stretch" fxLayout="column" [formGroup]=formGroup (ngSubmit)='postFormDetails()'>
             <mat-form-field class="example-full-width">
                 <input matInput placeholder="First Name" formControlName='Name'>
@@ -30,7 +30,7 @@
                 <input matInput type="password" placeholder="Password" formControlName='PasswordHash'>
             </mat-form-field>
            
-            <button  mat-raised-button type="submit" class="btn" color="primary">Register</button>
+            <button  mat-raised-button type="submit" class="btn" color="primary">Create</button>
             </form>    
     </mat-card>
     <button *ngIf="formGroup.valid" type="button" [routerLink]="['/']" mat-raised-button  class="btn" color="primary">Home</button>

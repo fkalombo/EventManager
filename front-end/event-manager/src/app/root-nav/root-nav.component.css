@@ -2,14 +2,14 @@
   height: 100%;
   background-size:cover;
   width:auto;
-  
-  background-image: url(../../assets/images/backgroundImage.jpg);
+  background-image: url(../../assets/images/backgroundImage3.jpg);
+  /* background-image: linear-gradient(to right,blue,yellow); */
 
 }
 
 .sidenav {
   width: 200px;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgb(225, 230, 236);
 }
 
 .sidenav .mat-toolbar {
@@ -19,7 +19,6 @@
 
 
 .mat-toolbar.mat-primary {
-  background-color: rgba(0,255,255,0);
   position: sticky;
   top: 0;
   z-index: 1;
