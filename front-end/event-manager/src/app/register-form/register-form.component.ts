@@ -42,6 +42,7 @@ export class RegisterFormComponent implements OnInit {
       console.log("Incorrect data");
       
     }
+
     
   }
 }

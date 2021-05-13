@@ -18,4 +18,7 @@ export class ValidateService {
     data.UserName = data.Email
     return this.http.post("https://jstevents.herokuapp.com/api/users/insert/",JSON.parse(JSON.stringify(data)),this.httpOptions)
   }
+  loginUser(): Observable<any>{
+    return this.http.get("http://jstevents.herokuapp.com/api/users/getAll")
+  }
 }

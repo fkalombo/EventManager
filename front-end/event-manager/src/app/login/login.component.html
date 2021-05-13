@@ -4,11 +4,11 @@
         <form class="form" fxLayoutAlign="stretch" fxLayout="column" [formGroup]='login' (ngSubmit)='onSubmit()'>
         
             <mat-form-field class="example-full-width">
-                <input matInput type="email" placeholder="Email" formControlName='Email'>
+                <input matInput type="email" placeholder="Email" formControlName='email'>
             </mat-form-field>
             
             <mat-form-field class="example-full-width">
-                <input matInput type="password" placeholder="Password" formControlName='PasswordHash'>
+                <input matInput type="password" placeholder="Password" formControlName='password'>
             </mat-form-field>
             <button mat-raised-button type="submit" class="btn" color="primary">Login</button>
             <br/>
