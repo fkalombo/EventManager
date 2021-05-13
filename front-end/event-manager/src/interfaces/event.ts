@@ -1,11 +1,12 @@
 export interface Event {
-  title: string;
-  subtitle: string;
-  description: string;
-  startTimeHour: number;
-  startTimeMinutes: number;
-  endTimeHour: number;
-  endTimeMinutes: number;
-  maxPeople: number;
-  //banner:
+  Description: string;
+  MaxNumGuests:string
+  EventDate:string
+  StartTime:string
+  EndTime:string
+  EventCreatorId:string
+  BannerId:string
+  EventTitle:string
+  EventSubtitle:string
+  VenueId: null
 }

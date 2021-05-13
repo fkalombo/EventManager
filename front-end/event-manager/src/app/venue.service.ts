@@ -11,7 +11,8 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class VenueService {
 
-  private eventsUrl = 'https://jstevents.herokuapp.com/api/venues/insert';  // URL to web api
+  private eventsUrlInsert = 'https://jstevents.herokuapp.com/api/venues/insert';  // URL to web api
+  private eventsUrlGet = 'https://jstevents.herokuapp.com/api/venues/get';  // URL to web api
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json'})
@@ -28,6 +29,10 @@ export class VenueService {
     let body = JSON.parse(JSON.stringify(venue));
     console.log(body);
 
-    return this.http.post<Venue>(this.eventsUrl,body, this.httpOptions);
+    return this.http.post<Venue>(this.eventsUrlInsert,body, this.httpOptions);
+  }
+
+  getVenue(): Observable<any> {
+    return this.http.get(this.eventsUrlGet);
   }
 }
