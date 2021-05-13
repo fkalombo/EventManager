@@ -1,6 +1,5 @@
 <mat-card fxFlex="44">
-
-  <form class="form" fxLayoutAlign="stretch" fxLayout="column" [formGroup]="events" (ngSubmit)="onSubmit()">
+  <form *ngIf="logged" class="form" fxLayoutAlign="stretch" fxLayout="column" [formGroup]="events" (ngSubmit)="onSubmit()">
     <mat-toolbar color="primary">Event Information</mat-toolbar>
     <mat-form-field>
       <input matInput placeholder="UserID" formControlName="EventCreatorId" required >
@@ -44,6 +43,10 @@
       <button mat-raised-button class="button_next" style='float:right' color="accent" [routerLink]="['../create-venue']" [disabled]="!events.valid">Next</button>
     </section>
   </form>
+  <p *ngIf="!logged">Sorry You need to login to create an event.<br>
+  Click to <a [routerLink]="['/Login']">Login</a></p>
+  
+  
 
 
 </mat-card>

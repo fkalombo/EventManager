@@ -1,3 +1,4 @@
+import { loggedIn } from './../../environments/environment';
 import { TicketsService } from './../services/tickets.service';
 import { VenueService } from './../services/venue.service';
 import { EventService } from './../services/event.service';
@@ -12,7 +13,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./create-events-form.component.css']
 })
 export class CreateEventsFormComponent implements OnInit {
-
+  logged: Boolean = loggedIn
   events = new FormGroup({
     Description: new FormControl("",[Validators.required]),
     EventDate: new FormControl("",[Validators.required]),

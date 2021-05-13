@@ -2,13 +2,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { baseUrl } from 'src/environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ValidateService {
-  private url = `${baseUrl}register`
+
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json'})
   }

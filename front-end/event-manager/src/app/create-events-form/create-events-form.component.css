@@ -21,6 +21,10 @@ mat-form-field{
 
 }
 
+p{
+  text-align: center;
+}
+
 input {
   border: none;
   background: none;

@@ -8,7 +8,7 @@ import { ValidateService } from '../services/validate.service';
   styleUrls: ['./register-form.component.css']
 })
 export class RegisterFormComponent implements OnInit {
-
+  ShowForm: boolean= true;
   formGroup: FormGroup  = new FormGroup({
       Name: new FormControl("",[Validators.required]),
       Surname: new FormControl("",[Validators.required]),
@@ -18,9 +18,6 @@ export class RegisterFormComponent implements OnInit {
       UserName: new FormControl("username",[Validators.required]),
       DateOfBirth: new FormControl("",[Validators.required]),
       GenderId: new FormControl("",[Validators.required]),
-      
-      
-      
       
     })
 
@@ -37,6 +34,7 @@ export class RegisterFormComponent implements OnInit {
       console.log(this.formGroup.value);
       this.validateService.register(this.formGroup.value).subscribe(results=>{ 
       console.log(results)})
+      this.ShowForm = false;
      
     } else {
       console.log("Incorrect data");

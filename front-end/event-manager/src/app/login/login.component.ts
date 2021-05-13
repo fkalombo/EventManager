@@ -28,9 +28,21 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser(){
+    let user;
     this._auth.loginUser().subscribe(
-      res => {this.loginData = res}
+      users => {this.loginData = users}
+
     )
+  }
+
+  validateLogin(users:any, user:any){
+    users.forEach((element:any) => {
+      if (element.Email == this.login.get("email")?.value){
+          user = element;
+          return 
+      }  
+    });
+    
   }
 
 }
