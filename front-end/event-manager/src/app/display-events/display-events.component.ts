@@ -1,4 +1,4 @@
-import { DisplayEventsService } from './../display-events.service';
+import { DisplayEventsService } from './../services/display-events.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

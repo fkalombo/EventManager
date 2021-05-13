@@ -1,6 +1,6 @@
-import { TicketsService } from './../tickets.service';
-import { VenueService } from './../venue.service';
-import { EventService } from './../event.service';
+import { TicketsService } from './../services/tickets.service';
+import { VenueService } from './../services/venue.service';
+import { EventService } from './../services/event.service';
 import { Event } from './../../interfaces/event';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
