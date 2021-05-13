@@ -1,5 +1,7 @@
+
 import { CreateTicketFormComponent } from './create-ticket-form/create-ticket-form.component';
 import { CreateVenueFormComponent } from './create-venue-form/create-venue-form.component';
+import { DisplayEventsComponent } from './display-events/display-events.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -19,7 +21,7 @@ const routes: Routes = [
   {path:'create-ticket', component:CreateTicketFormComponent},
   {path:'register', component:RegisterFormComponent},
   {path:'Login', component:LoginComponent},
-  {path:'view-events',component:PageNotFoundComponent},
+  {path:'view-events',component:DisplayEventsComponent},
   {path:'about',component:AboutComponent},
   {path:'**',component:PageNotFoundComponent}
 ];

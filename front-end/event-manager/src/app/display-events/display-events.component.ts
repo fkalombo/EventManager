@@ -1,3 +1,4 @@
+import { DisplayEventsService } from './../display-events.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./display-events.component.css']
 })
 export class DisplayEventsComponent implements OnInit {
+  events: Array<any> = []
 
-  constructor() { }
+  constructor(private displayService: DisplayEventsService) { }
 
   ngOnInit(): void {
+    this.displayService.getEvents().subscribe((results)=>{this.events = results})
   }
 
 }
