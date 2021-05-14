@@ -9,10 +9,8 @@
       <a mat-list-item [routerLink]="['create-event']" >Create Event</a>
       <a mat-list-item [routerLink]="['view-events']" >View Events</a>
       <a mat-list-item [routerLink]="['about']">About Us</a>
-      <!-- <a mat-list-item [routerLink]="['register']" >Registration</a> -->
-      <a mat-list-item [routerLink]="['Login']">Login</a>
+      <a mat-list-item [routerLink]="['login']">Login</a>
     </mat-nav-list>
-      
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
@@ -24,11 +22,8 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <h2 class="event-man">  JSt-Events</h2>
+      <h2 class="event-man"> JSt-Events</h2>
     </mat-toolbar>
-
-    <ng-content>  </ng-content>
-    <!-- Add Content Here -->
-  
+    <ng-content> </ng-content>  
   </mat-sidenav-content>
 </mat-sidenav-container>

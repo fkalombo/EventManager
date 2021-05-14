@@ -1,13 +1,15 @@
 mat-card{
-  padding: 40px;
-  max-width: 600px;
-  margin: 40px auto;
-  border-radius: 4px;
-}
-
-.main-div mat-card{
     padding: 0px;
-}
+    max-width: 100%;
+    width: 600px;
+    margin: 40px auto;
+    border-radius: 4px;
+  }
+  
+  .main-div {
+    margin: 20px;
+    padding: 0;
+  }
 
 .form{
     padding: 20px;

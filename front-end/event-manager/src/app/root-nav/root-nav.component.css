@@ -1,10 +1,8 @@
 .sidenav-container {
   height: 100%;
   background-size:cover;
-  width:auto;
+  width:100%;
   background-image: url(../../assets/images/backgroundImage3.jpg);
-  /* background-image: linear-gradient(to right,blue,yellow); */
-
 }
 
 .sidenav {
@@ -16,8 +14,6 @@
   background: inherit;
 }
 
-
-
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
@@ -27,4 +23,8 @@
 .event-man{
   font-family: cursive;
   color: black;
+}
+
+mat-sidenav-content{
+  padding: 0px;
 }

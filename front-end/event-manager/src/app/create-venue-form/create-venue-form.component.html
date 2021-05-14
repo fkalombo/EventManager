@@ -1,7 +1,7 @@
-<mat-card fxFlex="44">
-
-  <form class="form" fxLayoutAlign="stretch" fxLayout="column" [formGroup]="venue" (ngSubmit)="onSubmit()">
-    <mat-toolbar color="primary">Venue Information</mat-toolbar>
+<section class="main-div">
+<mat-card>
+  <mat-toolbar color="primary">Venue Information</mat-toolbar>
+  <form class="form" fxLayout="column" [formGroup]="venue" (ngSubmit)="onSubmit()">
     <mat-form-field>
       <input matInput placeholder="Name" formControlName="VenueName" required>
       <mat-error>This needs to be filled in</mat-error>
@@ -37,10 +37,11 @@
       <mat-error>Min of four numbers</mat-error>
     </mat-form-field>
     <section>
-      <button mat-raised-button type="submit" class="button_create" color="primary" [disabled]="!venue.valid">Create</button>
-      <button mat-raised-button class="button_next" style='float:right' color="accent" [routerLink]="['../create-ticket']" [disabled]="!venue.valid">Next</button>
+      <button mat-raised-button type="submit" color="primary" [disabled]="!venue.valid">Create</button>
+      <button mat-raised-button style='float:right' color="accent" [routerLink]="['../create-ticket']" [disabled]="!venue.valid">Next</button>
     </section>
   </form>
 
 
 </mat-card>
+</section>
