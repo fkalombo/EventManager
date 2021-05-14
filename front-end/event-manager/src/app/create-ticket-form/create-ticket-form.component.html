@@ -1,30 +1,31 @@
-<mat-card fxFlex="44">
-
-  <form class="form" fxLayoutAlign="stretch" fxLayout="column" [formGroup]="tickets" (ngSubmit)="onSubmit()">
+<section class="main-div">
+  <mat-card>
     <mat-toolbar color="primary">Ticket Information</mat-toolbar>
-    <mat-form-field>
-      <input matInput placeholder="General Tickets Available" formControlName="generalAvail" required>
-      <mat-error>This needs to be filled in</mat-error>
-    </mat-form-field>
+    <form class="form" fxLayout="column" [formGroup]="tickets" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <input matInput placeholder="General Tickets Available" formControlName="generalAvail" required>
+        <mat-error>This needs to be filled in</mat-error>
+      </mat-form-field>
 
-    <mat-form-field>
-      <input matInput placeholder="General Tickets Price" formControlName="generalPrice" required>
-      <mat-error>Currency format e.g 100.00</mat-error>
-    </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="General Tickets Price" formControlName="generalPrice" required>
+        <mat-error>Currency format e.g 100.00</mat-error>
+      </mat-form-field>
 
-    <mat-form-field>
-      <input matInput placeholder="VIP Tickets Available" formControlName="vipAvail" required>
-      <mat-error>This needs to be filled in</mat-error>
-    </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="VIP Tickets Available" formControlName="vipAvail" required>
+        <mat-error>This needs to be filled in</mat-error>
+      </mat-form-field>
 
-    <mat-form-field>
-      <input matInput placeholder="VIP Tickets Price" formControlName="vipPrice" required>
-      <mat-error>Currency format e.g 100.00</mat-error>
-    </mat-form-field>
-    <section>
-      <button mat-raised-button type="submit" class="button_create" color="primary" [disabled]="!tickets.valid"  [routerLink]="['']">Create</button>
-    </section>
-  </form>
+      <mat-form-field>
+        <input matInput placeholder="VIP Tickets Price" formControlName="vipPrice" required>
+        <mat-error>Currency format e.g 100.00</mat-error>
+      </mat-form-field>
+      <section>
+        <button mat-raised-button type="submit" class="button_create" color="primary" [disabled]="!tickets.valid"  [routerLink]="['']">Create</button>
+      </section>
+    </form>
 
 
-</mat-card>
+  </mat-card>
+</section>

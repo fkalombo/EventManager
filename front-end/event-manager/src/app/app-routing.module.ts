@@ -20,7 +20,7 @@ const routes: Routes = [
   {path:'create-venue', component:CreateVenueFormComponent},
   {path:'create-ticket', component:CreateTicketFormComponent},
   {path:'register', component:RegisterFormComponent},
-  {path:'Login', component:LoginComponent},
+  {path:'login', component:LoginComponent},
   {path:'view-events',component:DisplayEventsComponent},
   {path:'about',component:AboutComponent},
   {path:'**',component:PageNotFoundComponent}

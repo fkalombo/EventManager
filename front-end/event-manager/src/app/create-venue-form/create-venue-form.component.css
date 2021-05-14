@@ -1,10 +1,18 @@
 mat-card{
-  padding: 40px;
-  max-width: 600px;
+  padding: 0px;
+  max-width: 100%;
+  width: 600px;
   margin: 40px auto;
   border-radius: 4px;
 }
 
+.main-div {
+  margin: 20px;
+  padding: 0;
+}
+.form{
+  padding: 20px;
+}
 .ng-valid[required], .ng-valid.required  {
   border-left: 5px solid #42A948; /* green */
 }
@@ -31,12 +39,7 @@ input {
   color: currentColor;
 }
 
-.button_create {
+button{
   max-width: 200px;
   padding: 2px;
-}
-
-.button_next {
-  max-width: 100px;
-  position:relative;
 }

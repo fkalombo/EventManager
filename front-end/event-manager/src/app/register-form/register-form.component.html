@@ -1,8 +1,7 @@
-<section fxLayoutAlign="center center" fxFlexFill class="main-div">
-   
-    <mat-card *ngIf="ShowForm" fxFlex="44"> 
+<section class="main-div">
+    <mat-card *ngIf="ShowForm"> 
         <mat-toolbar color="primary">Registration</mat-toolbar>
-        <form class="form"  fxLayoutAlign="stretch" fxLayout="column" [formGroup]=formGroup (ngSubmit)='postFormDetails()'>
+        <form class="form" fxLayout="column" [formGroup]=formGroup (ngSubmit)='postFormDetails()'>
             <mat-form-field class="example-full-width">
                 <input matInput placeholder="First Name" formControlName='Name'>
             </mat-form-field>
