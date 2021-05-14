@@ -6,7 +6,7 @@ export const environment = {
   production: false
 };
 
-export let loggedIn: boolean = false
+
 
 /*
  * For easier debugging in development mode, you can import the following file

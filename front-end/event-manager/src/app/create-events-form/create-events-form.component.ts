@@ -1,10 +1,11 @@
-import { loggedIn } from './../../environments/environment';
+
 import { TicketsService } from './../services/tickets.service';
 import { VenueService } from './../services/venue.service';
 import { EventService } from './../services/event.service';
 import { Event } from './../../interfaces/event';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { loggedIn } from '../login/login.component';
 
 
 @Component({

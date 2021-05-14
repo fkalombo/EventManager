@@ -1,23 +1,26 @@
+
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl} from '@angular/forms';
 import { Router } from '@angular/router';
 import { ValidateService } from '../services/validate.service';
-
+export let loggedIn: boolean = false
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
 
+export class LoginComponent implements OnInit {
+  logged = loggedIn
   login = new FormGroup({
     email: new FormControl(''),
     password: new FormControl('')
   })
 
-  loginData = {}
+  loginData = []
 
   onSubmit() {
+    this.loginUser()
     console.warn(this.login.value);
   }
   
@@ -28,21 +31,38 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser(){
-    let user;
+
     this._auth.loginUser().subscribe(
-      users => {this.loginData = users}
-
+      users => {
+        let userDetails = this.validateLogin(users)
+      if (userDetails.PasswordHash == this.login.get("password")?.value){
+      console.log("llklk");
+      loggedIn = true
+      console.log(loggedIn);
+      
+      } else {
+          alert("Incorrect Password or Email")
+      }
+      
+      }
     )
-  }
-
-  validateLogin(users:any, user:any){
-    users.forEach((element:any) => {
-      if (element.Email == this.login.get("email")?.value){
-          user = element;
-          return 
-      }  
-    });
     
+    
+    
+  }
+  validateLogin(users: string | any[]){
+
+    for(let i = 0; i<users.length; i++){
+      console.log(users[i].Email.toString());
+      console.log(this.login.get("email")?.value);
+      
+      
+        if(users[i].Email.toString() == this.login.get("email")?.value){
+          return users[i]
+        }
+    };
+    return {'PasswordHash':null}
+  
   }
 
 }
