@@ -1,4 +1,3 @@
-
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -16,7 +15,7 @@ export class ValidateService {
 
   register(data: any): Observable<any>{
     data.UserName = data.Email
-    return this.http.post("https://jstevents.herokuapp.com/api/users/insert/",JSON.parse(JSON.stringify(data)),this.httpOptions)
+    return this.http.post("https://jstevents.herokuapp.com/api/users/register/",JSON.parse(JSON.stringify(data)),this.httpOptions)
   }
   loginUser(): Observable<any>{
     return this.http.get("http://jstevents.herokuapp.com/api/users/getAll")
