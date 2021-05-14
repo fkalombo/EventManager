@@ -1,48 +1,50 @@
-<mat-card fxFlex="44">
-  <form *ngIf="logged" class="form" fxLayoutAlign="stretch" fxLayout="column" [formGroup]="events" (ngSubmit)="onSubmit()">
+<section class="main-div">
+  <mat-card>
     <mat-toolbar color="primary">Event Information</mat-toolbar>
-    <mat-form-field>
-      <input matInput placeholder="UserID" formControlName="EventCreatorId" required >
-      <mat-error>This needs to be filled in</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Event Name" formControlName="EventTitle" required >
-      <mat-error>This needs to be filled in</mat-error>
-    </mat-form-field>
+    <form *ngIf="logged" class="form" fxLayout="column" [formGroup]="events" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <input matInput placeholder="UserID" formControlName="EventCreatorId" required >
+        <mat-error>This needs to be filled in</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Event Name" formControlName="EventTitle" required >
+        <mat-error>This needs to be filled in</mat-error>
+      </mat-form-field>
 
-    <mat-form-field>
-      <input matInput placeholder="Event tag" formControlName="EventSubtitle" required>
-      <mat-error>This needs to be filled in</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Description" formControlName="Description" required>
-      <mat-error>This needs to be filled in</mat-error>
-    </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Event tag" formControlName="EventSubtitle" required>
+        <mat-error>This needs to be filled in</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Description" formControlName="Description" required>
+        <mat-error>This needs to be filled in</mat-error>
+      </mat-form-field>
 
-    <mat-form-field>
-      <input matInput placeholder="Date"[matDatepicker]="picker" formControlName='EventDate' required>
-      <mat-datepicker-toggle matSuffix [for]="picker">
-          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
-      </mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-      <mat-error>Select from drop down menu</mat-error>
-    </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Date"[matDatepicker]="picker" formControlName='EventDate' required>
+        <mat-datepicker-toggle matSuffix [for]="picker">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error>Select from drop down menu</mat-error>
+      </mat-form-field>
 
-    <mat-form-field>
-      <input matInput placeholder="Start Time" formControlName="StartTime" required>
-      <mat-error>24 hour format .. : ..</mat-error>
-    </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Start Time" formControlName="StartTime" required>
+        <mat-error>24 hour format .. : ..</mat-error>
+      </mat-form-field>
 
-    <mat-form-field>
-      <input matInput placeholder="End Time" formControlName="EndTime" required>
-      <mat-error>24 hour format .. : .</mat-error>
-    </mat-form-field>
-    <section>
+      <mat-form-field>
+        <input matInput placeholder="End Time" formControlName="EndTime" required>
+        <mat-error>24 hour format .. : .</mat-error>
+      </mat-form-field>
+      <section>
 
-      <button mat-raised-button type="submit" class="button_create" color="primary">Create</button>
-      <button mat-raised-button class="button_next" style='float:right' color="accent" [routerLink]="['../create-venue']" [disabled]="!events.valid">Next</button>
-    </section>
-  </form>
-  <p *ngIf="!logged">Sorry You need to login to create an event.<br>
-  Click to <a [routerLink]="['/login']">Login</a></p>
-</mat-card>
+        <button mat-raised-button type="submit" class="button_create" color="primary">Create</button>
+        <button mat-raised-button class="button_next" style='float:right' color="accent" [routerLink]="['../create-venue']" [disabled]="!events.valid">Next</button>
+      </section>
+    </form>
+    <p *ngIf="!logged">Sorry You need to login to create an event.<br>
+    Click to <a [routerLink]="['/login']">Login</a></p>
+  </mat-card>
+</section>
