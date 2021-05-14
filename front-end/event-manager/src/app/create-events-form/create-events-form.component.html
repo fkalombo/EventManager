@@ -1,7 +1,7 @@
 <section class="main-div">
-  <mat-card>
-    <mat-toolbar color="primary">Event Information</mat-toolbar>
-    <form *ngIf="logged" class="form" fxLayout="column" [formGroup]="events" (ngSubmit)="onSubmit()">
+  <mat-card  >
+    <mat-toolbar *ngIf="logged" color="primary">Event Information</mat-toolbar>
+    <form *ngIf="logged"class="form" fxLayout="column" [formGroup]="events" (ngSubmit)="onSubmit()">
       <mat-form-field>
         <input matInput placeholder="UserID" formControlName="EventCreatorId" required >
         <mat-error>This needs to be filled in</mat-error>

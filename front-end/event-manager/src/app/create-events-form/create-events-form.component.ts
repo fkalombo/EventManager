@@ -14,7 +14,7 @@ import { loggedIn } from '../login/login.component';
   styleUrls: ['./create-events-form.component.css']
 })
 export class CreateEventsFormComponent implements OnInit {
-  logged: Boolean = true
+  logged: Boolean = loggedIn
   events = new FormGroup({
     Description: new FormControl("",[Validators.required]),
     EventDate: new FormControl("",[Validators.required]),
