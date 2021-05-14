@@ -36,12 +36,10 @@
       <input matInput placeholder="ZipCode" formControlName="ZipCode" required>
       <mat-error>Min of four numbers</mat-error>
     </mat-form-field>
-    <section>
+    <section id="id-section">
       <button mat-raised-button type="submit" color="primary" [disabled]="!venue.valid">Create</button>
       <button mat-raised-button style='float:right' color="accent" [routerLink]="['../create-ticket']" [disabled]="!venue.valid">Next</button>
     </section>
   </form>
-
-
 </mat-card>
 </section>
