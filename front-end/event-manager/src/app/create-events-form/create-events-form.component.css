@@ -1,5 +1,5 @@
 mat-card{
-  padding: 40px;
+  padding: 0px;
   max-width: 600px;
   margin: 40px auto;
   border-radius: 4px;
@@ -43,13 +43,8 @@ input {
   color: currentColor;
 }
 
-.button_create {
+button {
   max-width: 200px;
   padding: 2px;
-}
-
-.button_next {
-  max-width: 100px;
-  position:relative;
 }
 
